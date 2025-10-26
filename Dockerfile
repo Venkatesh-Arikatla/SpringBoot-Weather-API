@@ -1,5 +1,5 @@
-# Use OpenJDK 17
-FROM openjdk:17-jdk-slim
+# Use OpenJDK 21 instead of 17
+FROM openjdk:21-jdk-slim
 
 # Set working directory
 WORKDIR /app
