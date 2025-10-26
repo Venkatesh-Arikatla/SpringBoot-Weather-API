@@ -607,8 +607,8 @@
         document.getElementById('errorMessage').style.display = 'none';
 
         try {
-            // Call your actual API
-            const response = await fetch(`http://localhost:8080/api/weather/city/${input}`);
+            // ✅ FIXED: Use the correct search endpoint with your live Render URL
+            const response = await fetch(`https://springboot-weather-api-1.onrender.com/api/weather/search?city=${input}`);
             
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
