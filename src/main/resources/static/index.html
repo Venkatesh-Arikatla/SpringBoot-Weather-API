@@ -210,15 +210,23 @@
             background: rgba(0,0,0,0.8);
             border-radius: 20px;
             box-shadow: 0 8px 20px rgba(0, 249, 255, 0.2);
-            padding: clamp(20px, 5vw, 30px);
+            padding: 30px 20px;
             text-align: center;
             animation: fadeIn 0.5s ease-in-out;
             border: 1px solid rgba(0, 249, 255, 0.1);
             backdrop-filter: blur(10px);
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
+            min-height: 350px;
+        }
+
+        .main-weather-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            min-height: 300px;
+            flex: 1;
             gap: 15px;
         }
 
@@ -233,34 +241,38 @@
         }
 
         .weather-emoji {
-            font-size: clamp(60px, 15vw, 80px);
-            margin-bottom: 10px;
+            font-size: clamp(70px, 18vw, 90px);
             line-height: 1;
+            margin: 0;
         }
 
         .city-name {
-            font-size: clamp(24px, 6vw, 32px);
+            font-size: clamp(22px, 6vw, 28px);
             color: #00f9ff;
             line-height: 1.2;
+            margin: 0;
         }
 
         .temperature {
-            font-size: clamp(48px, 12vw, 64px);
+            font-size: clamp(42px, 12vw, 60px);
             font-weight: 700;
             color: #fff;
             line-height: 1;
+            margin: 0;
         }
 
         .feels-like {
             font-size: clamp(16px, 4vw, 18px);
             color: #aaa;
             line-height: 1.2;
+            margin: 0;
         }
 
         .weather-condition {
-            font-size: clamp(18px, 5vw, 24px);
+            font-size: clamp(18px, 5vw, 22px);
             color: #fff;
             line-height: 1.2;
+            margin: 0;
         }
 
         .weather-details {
@@ -431,12 +443,23 @@
                 flex-wrap: nowrap;
                 gap: 0;
             }
+            
+            .main-weather-card {
+                min-height: 400px;
+                padding: 40px 30px;
+            }
+            
+            .main-weather-content {
+                gap: 20px;
+            }
         }
 
         /* Mobile-specific optimizations */
         @media (max-width: 767px) {
             body {
                 padding: 15px;
+                align-items: flex-start;
+                padding-top: 70px;
             }
             
             .search-container {
@@ -466,8 +489,12 @@
             }
             
             .main-weather-card {
-                min-height: 250px;
-                gap: 10px;
+                min-height: 300px;
+                padding: 25px 15px;
+            }
+            
+            .main-weather-content {
+                gap: 12px;
             }
         }
 
@@ -475,6 +502,7 @@
         @media (max-width: 480px) {
             body {
                 padding: 10px;
+                padding-top: 60px;
             }
             
             .search-container input, .search-container button {
@@ -491,8 +519,12 @@
             }
             
             .main-weather-card {
-                min-height: 220px;
-                gap: 8px;
+                min-height: 280px;
+                padding: 20px 15px;
+            }
+            
+            .main-weather-content {
+                gap: 10px;
             }
         }
     </style>
@@ -533,11 +565,13 @@
 
     <div class="weather-display" id="weatherDisplay">
         <div class="main-weather-card">
-            <div class="weather-emoji" id="weatherEmoji">🌧️</div>
-            <h2 class="city-name" id="cityName">Peddapuram, IN</h2>
-            <div class="temperature" id="temperature">25.4°C</div>
-            <div class="feels-like" id="feelsLike">Feels like 25.4°C</div>
-            <div class="weather-condition" id="weatherCondition">moderate rain</div>
+            <div class="main-weather-content">
+                <div class="weather-emoji" id="weatherEmoji">🌧️</div>
+                <h2 class="city-name" id="cityName">Peddapuram, IN</h2>
+                <div class="temperature" id="temperature">25.4°C</div>
+                <div class="feels-like" id="feelsLike">Feels like 25.4°C</div>
+                <div class="weather-condition" id="weatherCondition">moderate rain</div>
+            </div>
         </div>
 
         <div class="details-weather-card">
